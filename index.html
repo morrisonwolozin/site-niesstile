@@ -6,54 +6,58 @@
 <title>Niess Tile</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  :root{
-    --ink:#1C2321;
-    --stone:#EDE8DE;
-    --grout:#8C8577;
-    --glaze:#3A6B62;
-  }
-  html, body { height: 100%; margin: 0; }
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--stone);
-    color: var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-image:
-      linear-gradient(rgba(28,35,33,0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(28,35,33,0.08) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    margin: 0 0 0.75rem 0;
-  }
-  p {
-    color: var(--grout);
-    font-size: 1.05rem;
-    margin: 0;
-  }
-  .accent {
-    display: inline-block;
-    width: 40px;
-    height: 3px;
-    background: var(--glaze);
-    margin: 1.5rem 0;
-  }
-</style>
+    :root{
+      --ink:#1C2321;
+      --stone:#EDE8DE;
+      --grout:#8C8577;
+      --glaze:#3A6B62;
+    }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--stone);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image:
+        linear-gradient(rgba(28,35,33,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(28,35,33,0.08) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin: 0 0 0.75rem 0;
+    }
+    p {
+      color: var(--grout);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .accent {
+      display: inline-block;
+      width: 40px;
+      height: 3px;
+      background: var(--glaze);
+      margin: 1.5rem 0;
+    }
+  </style>
+
+
 </head>
-<body>
-  <div>
-    <h1>Niess Tile</h1>
-    <span class="accent"></span>
-    <p>Jeff Niess Tile</p>
-    <p>Dixmont, ME   484-707-3516.</p>
-    <p>The website will follow shortly.</p>
-  </div>
-</body>
+  <body>
+    <div>
+      <p class="text-5xl text-bold y-2">Niess Tile</p>
+      <span class="accent"></span>
+      <p class="text-xl py-2"> Jeff Niess</p>
+      <p>Dixmont, ME   484-707-3516.</p>
+      <p>The website will follow shortly.</p>
+    </div>
+  </body>
 </html>

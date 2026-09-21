@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sample-kitchen-backsplash",
+    "title": "Herringbone Backsplash — Camden, ME",
+    "category": "kitchen",
+    "priority": 10,
+    "image": "assets/img/showroom/placeholder-kitchen-1.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  },
+  {
+    "id": "sample-bath-shower",
+    "title": "Curbless Shower Surround — Belfast, ME",
+    "category": "bath",
+    "priority": 9,
+    "image": "assets/img/showroom/placeholder-bath-1.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  },
+  {
+    "id": "sample-floor-entry",
+    "title": "Slate Entryway — Rockport, ME",
+    "category": "floors",
+    "priority": 8,
+    "image": "assets/img/showroom/placeholder-floor-1.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  },
+  {
+    "id": "sample-kitchen-floor",
+    "title": "Kitchen Floor Tile — Union, ME",
+    "category": "kitchen",
+    "priority": 7,
+    "image": "assets/img/showroom/placeholder-kitchen-2.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  },
+  {
+    "id": "sample-bath-floor",
+    "title": "Heated Bathroom Floor — Lincolnville, ME",
+    "category": "bath",
+    "priority": 6,
+    "image": "assets/img/showroom/placeholder-bath-2.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  },
+  {
+    "id": "sample-floor-mudroom",
+    "title": "Mudroom Tile — Hope, ME",
+    "category": "floors",
+    "priority": 5,
+    "image": "assets/img/showroom/placeholder-floor-2.jpg",
+    "description": "Placeholder entry. Replace with a real project photo and caption once available."
+  }
+]

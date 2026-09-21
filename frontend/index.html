@@ -355,7 +355,7 @@
     renderShowroom();
   });
 
-  fetch('data/projects-niesstile.json')
+  fetch('../backend/projects-niesstile.json')
     .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
     .then(data => { allProjects = data; renderShowroom(); })
     .catch(() => { allProjects = FALLBACK_PROJECTS; renderShowroom(); });

@@ -384,7 +384,7 @@
     status.textContent = 'Sending…';
 
     try {
-      const res = await fetch('/forms/niesstile/contact', {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

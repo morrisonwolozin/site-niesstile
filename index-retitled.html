@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Niess Tile — Custom Tile Installation, Midcoast Maine</title>
+<meta name="description" content="Niess Tile — custom tile installation for kitchens, bathrooms, and floors in Midcoast Maine. Trusted trade partner of Northridge Construction.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          porcelain: '#F7F4EE',
+          grout: '#262321',
+          groutsoft: '#4A4541',
+          glaze: '#2F6363',
+          glazedark: '#234B4B',
+          sand: '#C9A227',
+          stone: '#EDE7DD',
+          stoneline: '#DCD4C4'
+        },
+        fontFamily: {
+          display: ['"Source Serif 4"', 'serif'],
+          body: ['"Work Sans"', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Work Sans', sans-serif; background: #F7F4EE; color: #262321; }
+  .font-display { font-family: 'Source Serif 4', serif; }
+
+  details > summary { cursor: pointer; list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+
+  .showroom-card { transition: transform 180ms ease; }
+  .showroom-card:hover { transform: translateY(-3px); }
+
+  .filter-btn[data-active="true"] {
+    background-color: #262321;
+    color: #F7F4EE;
+    border-color: #262321;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2F6363;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .showroom-card { transition: none; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-porcelain/95 backdrop-blur border-b border-stoneline">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#hero" class="flex items-center">
+      <img src="assets/img/logo/niesstile-wordmark.png" alt="Niess Tile" class="h-8 w-auto">
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-groutsoft">
+      <a href="#about" class="hover:text-grout">About</a>
+      <a href="#showroom" class="hover:text-grout">Show Room</a>
+      <a href="#testimonials" class="hover:text-grout">Testimonials</a>
+      <a href="#faq" class="hover:text-grout">FAQ</a>
+      <a href="#contact" class="hover:text-grout">Contact</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-block text-sm bg-grout text-porcelain px-4 py-2 rounded-sm hover:bg-glazedark transition-colors">Get a quote</a>
+    <button id="menuToggle" class="md:hidden text-grout" aria-label="Open menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav id="mobileMenu" class="hidden md:hidden border-t border-stoneline bg-porcelain px-6 py-4 flex flex-col gap-4 text-groutsoft">
+    <a href="#about">About</a>
+    <a href="#showroom">Show Room</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="hero" class="pt-40 pb-24 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-glaze font-medium mb-4">Central and Midcoast Maine</p>
+      <h1 class="font-display text-5xl md:text-6xl leading-[1.05] text-grout">
+        Tile that's set right the first time.
+      </h1>
+      <p class="mt-6 text-lg text-groutsoft max-w-md">
+        Jeff Niess has been tiling for 15 years and the last eight in Maine.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#showroom" class="bg-grout text-porcelain px-6 py-3 rounded-sm hover:bg-glazedark transition-colors">See the Show Room</a>
+        <a href="#contact" class="border border-grout text-grout px-6 py-3 rounded-sm hover:bg-stone transition-colors">Get a quote</a>
+      </div>
+    </div>
+    <div class="rounded-sm overflow-hidden border border-stoneline aspect-[3/2]">
+      <img src="assets/img/hero/2000-LHR-entry.webp" alt="Setting wood-look plank tile with a notched trowel, spacers holding the joints true" class="w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-24 px-6 bg-stone border-y border-stoneline">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1.2fr_1fr] gap-16">
+    <div>
+      <h2 class="font-display text-3xl text-grout mb-6">A tile setter who works from level, not luck</h2>
+      <p class="text-groutsoft leading-relaxed mb-4">
+        [Draft — Jeff to review/adjust] Jeff Niess learned the trade in Eastern Pennsylvania before moving to Maine about seven years ago. He runs his business the same way he sets tile: straightforward, no shortcuts, no surprises when the job's done.
+      </p>
+      <p class="text-groutsoft leading-relaxed">
+        Niess Tile is a trusted trade partner of Northridge Construction and also takes on standalone renovation projects directly with homeowners across the Midcoast.
+      </p>
+    </div>
+    <dl class="grid grid-cols-2 gap-8 content-start">
+      <div>
+        <dt class="font-display text-3xl text-glaze">[#]</dt>
+        <dd class="text-sm text-groutsoft mt-1">Years setting tile</dd>
+      </div>
+      <div>
+        <dt class="font-display text-3xl text-glaze">Kitchens</dt>
+        <dd class="text-sm text-groutsoft mt-1">Backsplashes &amp; floors</dd>
+      </div>
+      <div>
+        <dt class="font-display text-3xl text-glaze">Baths</dt>
+        <dd class="text-sm text-groutsoft mt-1">Showers &amp; surrounds</dd>
+      </div>
+      <div>
+        <dt class="font-display text-3xl text-glaze">7</dt>
+        <dd class="text-sm text-groutsoft mt-1">Years in Maine</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ SHOW ROOM ============ -->
+<section id="showroom" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-display text-3xl text-grout mb-2">Show Room</h2>
+    <p class="text-groutsoft mb-10 max-w-md">A look at recent work. Filter by room to see relevant projects.</p>
+
+    <div id="filterBar" class="flex flex-wrap gap-3 mb-10">
+      <button class="filter-btn border border-stoneline rounded-full px-4 py-1.5 text-sm text-groutsoft hover:border-grout transition-colors" data-filter="all" data-active="true">All</button>
+      <button class="filter-btn border border-stoneline rounded-full px-4 py-1.5 text-sm text-groutsoft hover:border-grout transition-colors" data-filter="kitchen">Kitchen</button>
+      <button class="filter-btn border border-stoneline rounded-full px-4 py-1.5 text-sm text-groutsoft hover:border-grout transition-colors" data-filter="bath">Bath</button>
+      <button class="filter-btn border border-stoneline rounded-full px-4 py-1.5 text-sm text-groutsoft hover:border-grout transition-colors" data-filter="floors">Floors</button>
+    </div>
+
+    <div id="showroomGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- populated by JS from data/projects-niesstile.json -->
+    </div>
+    <p id="showroomEmpty" class="hidden text-groutsoft text-sm mt-6">No projects in this category yet.</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="py-24 px-6 bg-stone border-y border-stoneline">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="font-display text-3xl text-grout mb-10">Client Words</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <blockquote class="bg-porcelain p-6 rounded-sm border border-stoneline">
+        <p class="text-groutsoft leading-relaxed">[Placeholder testimonial — swap in a real client quote once available.]</p>
+        <footer class="mt-4 text-sm text-grout">— Client Name, Town, ME</footer>
+      </blockquote>
+      <blockquote class="bg-porcelain p-6 rounded-sm border border-stoneline">
+        <p class="text-groutsoft leading-relaxed">[Placeholder testimonial — swap in a real client quote once available.]</p>
+        <footer class="mt-4 text-sm text-grout">— Client Name, Town, ME</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-24 px-6">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="font-display text-3xl text-grout mb-10">Common Questions</h2>
+    <div class="divide-y divide-stoneline border-t border-b border-stoneline">
+
+      <details class="py-5 group">
+        <summary class="flex items-center justify-between text-grout">
+          <span>What areas do you serve?</span>
+          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-groutsoft">[Placeholder — confirm Jeff's service area.]</p>
+      </details>
+
+      <details class="py-5 group">
+        <summary class="flex items-center justify-between text-grout">
+          <span>Do you supply the tile, or do I?</span>
+          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-groutsoft">[Placeholder — clarify Jeff's usual arrangement with clients and material suppliers.]</p>
+      </details>
+
+      <details class="py-5 group">
+        <summary class="flex items-center justify-between text-grout">
+          <span>How far in advance should I book?</span>
+          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-groutsoft">[Placeholder — typical lead time.]</p>
+      </details>
+
+      <details class="py-5 group">
+        <summary class="flex items-center justify-between text-grout">
+          <span>Do you work directly with homeowners, or only through contractors?</span>
+          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-groutsoft">Both — Niess Tile is a trusted trade partner of Northridge Construction and also takes on standalone projects directly with homeowners.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-24 px-6 bg-grout text-porcelain">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-[1fr_1.4fr] gap-16">
+    <div>
+      <h2 class="font-display text-3xl mb-3">Start a conversation</h2>
+      <p class="text-porcelain/70 mb-10">Tell us a bit about your project and we'll get back to you.</p>
+
+      <dl class="space-y-6 text-porcelain/90">
+        <div>
+          <dt class="text-sm text-porcelain/60 mb-1">Contact</dt>
+          <dd>Jeff Niess</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-porcelain/60 mb-1">Location</dt>
+          <dd>Dixmont, ME</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-porcelain/60 mb-1">Email</dt>
+          <dd><a href="mailto:niesstile@gmail.com" class="hover:text-glaze transition-colors">niesstile@gmail.com</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-porcelain/60 mb-1">Phone</dt>
+          <dd><a href="tel:+14847073516" class="hover:text-glaze transition-colors">484-707-3516</a></dd>
+        </div>
+      </dl>
+    </div>
+
+    <form id="contactForm" class="grid sm:grid-cols-2 gap-5 content-start">
+      <div class="sm:col-span-1">
+        <label for="name" class="block text-sm mb-1 text-porcelain/80">Name</label>
+        <input id="name" name="name" type="text" required class="w-full bg-porcelain/5 border border-porcelain/20 rounded-sm px-3 py-2 focus:border-glaze">
+      </div>
+      <div class="sm:col-span-1">
+        <label for="email" class="block text-sm mb-1 text-porcelain/80">Email</label>
+        <input id="email" name="email" type="email" required class="w-full bg-porcelain/5 border border-porcelain/20 rounded-sm px-3 py-2 focus:border-glaze">
+      </div>
+      <div class="sm:col-span-1">
+        <label for="phone" class="block text-sm mb-1 text-porcelain/80">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" class="w-full bg-porcelain/5 border border-porcelain/20 rounded-sm px-3 py-2 focus:border-glaze">
+      </div>
+      <div class="sm:col-span-1">
+        <label for="projectType" class="block text-sm mb-1 text-porcelain/80">Project type</label>
+        <select id="projectType" name="projectType" class="w-full bg-porcelain/5 border border-porcelain/20 rounded-sm px-3 py-2 focus:border-glaze">
+          <option value="">Select…</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="bath">Bath</option>
+          <option value="floors">Floors</option>
+          <option value="other">Other / not sure yet</option>
+        </select>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="message" class="block text-sm mb-1 text-porcelain/80">Message</label>
+        <textarea id="message" name="message" rows="4" class="w-full bg-porcelain/5 border border-porcelain/20 rounded-sm px-3 py-2 focus:border-glaze"></textarea>
+      </div>
+      <div class="sm:col-span-2">
+        <button type="submit" class="bg-glaze hover:bg-glazedark transition-colors text-porcelain px-6 py-3 rounded-sm">Send message</button>
+        <p id="formStatus" class="text-sm text-porcelain/60 mt-3" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="py-8 px-6 text-center text-sm text-groutsoft border-t border-stoneline">
+  &copy; <span id="footerYear"></span> Niess Tile. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+</script>
+
+<script>
+  // --- mobile menu ---
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('hidden') === false;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  // --- Show Room: fetch project data, render cards, filter ---
+  // Data lives in data/projects-niesstile.json today; once the per-site admin
+  // backend is built, this fetch target becomes an API route (e.g. /api/niesstile/projects)
+  // instead of a static file, with no change needed to the rendering code below.
+  // Sort/limit by "priority" (higher = shown first / included first) so the future
+  // admin UI can reorder the gallery or trim how many cards show just by editing that field.
+  const FALLBACK_PROJECTS = [
+    { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, description: 'Placeholder entry.' },
+    { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, description: 'Placeholder entry.' },
+    { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, description: 'Placeholder entry.' }
+  ];
+
+  let allProjects = [];
+  let activeFilter = 'all';
+
+  function renderShowroom() {
+    const grid = document.getElementById('showroomGrid');
+    const empty = document.getElementById('showroomEmpty');
+    const visible = allProjects
+      .filter(p => activeFilter === 'all' || p.category === activeFilter)
+      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
+
+    grid.innerHTML = '';
+    empty.classList.toggle('hidden', visible.length > 0);
+
+    visible.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'showroom-card bg-stone rounded-sm overflow-hidden border border-stoneline';
+      card.innerHTML = `
+        <div class="aspect-[4/3] bg-stoneline flex items-center justify-center text-groutsoft text-sm">
+          Photo pending
+        </div>
+        <div class="p-4">
+          <p class="text-xs uppercase tracking-wide text-glaze mb-1">${p.category}</p>
+          <h3 class="font-display text-lg text-grout mb-1">${p.title}</h3>
+          <p class="text-sm text-groutsoft">${p.description ?? ''}</p>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  document.getElementById('filterBar').addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.dataset.active = 'false');
+    btn.dataset.active = 'true';
+    activeFilter = btn.dataset.filter;
+    renderShowroom();
+  });
+
+  fetch('data/projects-niesstile.json')
+    .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
+    .then(data => { allProjects = data; renderShowroom(); })
+    .catch(() => { allProjects = FALLBACK_PROJECTS; renderShowroom(); });
+
+  // --- contact form ---
+  // POSTs to the shared contact-form server (Express, port 3002, PM2).
+  // TODO: confirm the exact route once the niesstile route is added there —
+  // this assumes the same path shape as Northridge's route and the same
+  // field names (name, email, phone, projectType, message).
+  const CONTACT_ENDPOINT = '/forms/niesstile/contact';
+
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('formStatus');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      projectType: form.projectType.value,
+      message: form.message.value
+    };
+
+    submitBtn.disabled = true;
+    status.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('/forms/niesstile/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Request failed');
+      status.textContent = 'Thanks — we\'ll be in touch soon.';
+      form.reset();
+    } catch (err) {
+      status.textContent = 'Something went wrong sending that. Please try again or call directly.';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

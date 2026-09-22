@@ -1,0 +1,26 @@
+[
+  {
+    "id": "kitchen-backsplash-1",
+    "title": "Kitchen Backsplash — Lincolnville, ME",
+    "category": "kitchen",
+    "priority": 10,
+    "image": "./assets/img/showroom/kitchen-1-lipscomb.webp",
+    "description": "customer purchased tile"
+  },
+  {
+    "id": "bath-floor-shower-1",
+    "title": "Shower and Floor Tile — Camden, ME",
+    "category": "bath",
+    "priority": 9,
+    "image": "./assets/img/showroom/bath-1-kurry.webp",
+    "description": "customer supplied tile"
+  },
+  {
+    "id": "floor-entry-1",
+    "title": "Entry Floor Tile— Lincolnville, ME",
+    "category": "floors",
+    "priority": 8,
+    "image": "./assets/img/showroom/floor-entry-1-lipscomb.webp",
+    "description": "entry floor tile by customer"
+  }
+]

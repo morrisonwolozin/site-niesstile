@@ -20,16 +20,7 @@
       { "src": "assets/img/showroom/backsplash-02-02.webp", "caption": "" }
     ]
   },
-   {
-    "id": "kitchen-backsplash",
-    "title": "Backsplash — Dixmont, ME",
-    "category": "kitchen",
-    "priority": 9,
-    "description": "",
-    "gallery": [
-      { "src": "assets/img/showroom/backsplash-05-01.webp", "caption": "" }
-    ]
-  },
+   
     {
     "id": "kitchen-backsplash",
     "title": "Backsplash — Hampden, ME",
@@ -37,8 +28,7 @@
     "priority": 9,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-03-01.webp", "caption": "" },
-      { "src": "assets/img/showroom/backsplash-3-02.webp", "caption": "" }
+      { "src": "assets/img/showroom/backsplash-03-01.webp", "caption": "" }
     ]
   },
 {
@@ -52,7 +42,16 @@
 
     ]
   },
-
+{
+    "id": "kitchen-backsplash",
+    "title": "Backsplash — Dixmont, ME",
+    "category": "kitchen",
+    "priority": 9,
+    "description": "",
+    "gallery": [
+      { "src": "assets/img/showroom/backsplash-05-01.webp", "caption": "" }
+    ]
+  },
 
   {
     "id": "floor",

@@ -11,6 +11,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
+<link href="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -73,7 +75,7 @@
     <!-- <a href="#hero" src="./logo.png" class="font-display text-2xl tracking-tight text-grout"><img src="./assets/img/logo-navbar.webp" alt="Niess Tile" class="h-12 w-auto"></a> -->
 
     <a href="#hero" class="flex items-center">
-      <img src="assets/img/niesstile-wordmark.png" alt="Niess Tile" class="h-10 w-auto">
+      <img src="assets/img/niesstile-wordmark.png" alt="Niess Tile" class="h-14 w-auto">
     </a>
 
     <nav class="hidden md:flex items-center gap-8 text-sm text-groutsoft">
@@ -99,10 +101,10 @@
 
 <!-- ============ HERO ============ -->
 <section id="hero" class="pt-40 pb-24 px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-4 items-center">
     <div>
-      <p class="text-glaze font-medium mb-4">Central and Midcoast Maine</p>
-      <h1 class="font-display text-5xl md:text-6xl leading-[1.05] text-grout">
+      <p class="text-glaze font-medium text-bold mb-4">Central and Midcoast Maine</p>
+      <h1 class="font-display text-4xl md:text-5xl leading-[1.05] text-grout">
         Tile that's set right.
       </h1>
       <p class="mt-6 text-lg text-groutsoft max-w-md">
@@ -113,7 +115,7 @@
         <a href="#contact" class="border border-grout text-grout px-6 py-3 rounded-sm hover:bg-stone transition-colors">Get a quote</a>
       </div>
     </div>
-    <div class="rounded-sm overflow-hidden border border-stoneline aspect-[3/2]">
+    <div class="rounded-sm overflow-hidden border border-stoneline aspect-[4/3]">
       <img src="assets/img/hero/2000-LHR-entry.webp" alt="Setting wood-look plank tile with a notched trowel, spacers holding the joints true" class="w-full h-full object-cover">
     </div>
   </div>
@@ -144,7 +146,11 @@
       </div>
       <div>
         <dt class="font-display text-3xl text-glaze">Baths</dt>
-        <dd class="text-sm text-groutsoft mt-1">Showers &amp; surrounds</dd>
+        <dd class="text-sm text-groutsoft mt-1">Showers, Vanities &amp; surrounds</dd>
+      </div>
+      <div>
+        <dt class="font-display text-3xl text-glaze">Floors</dt>
+        <dd class="text-sm text-groutsoft mt-1">Bath, Kitchen &amp; Entry</dd>
       </div>
       <div>
         <dt class="font-display text-3xl text-glaze">7</dt>
@@ -304,6 +310,8 @@
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 </script>
 
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+
 <script>
   // --- mobile menu ---
   const menuToggle = document.getElementById('menuToggle');
@@ -321,13 +329,14 @@
   // Sort/limit by "priority" (higher = shown first / included first) so the future
   // admin UI can reorder the gallery or trim how many cards show just by editing that field.
   const FALLBACK_PROJECTS = [
-    { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, description: 'Placeholder entry.' },
-    { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, description: 'Placeholder entry.' },
-    { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, description: 'Placeholder entry.' }
+    { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/kitchen-backsplash-camden-00.webp', caption: 'finished' }] },
+    { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/bath-shower-belfast-00.webp', caption: 'finished' }] },
+    { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/floor-entry-rockport-00.webp', caption: 'finished' }] }
   ];
 
   let allProjects = [];
   let activeFilter = 'all';
+  let showroomLightbox = null;
 
   function renderShowroom() {
     const grid = document.getElementById('showroomGrid');
@@ -342,10 +351,22 @@
     visible.forEach(p => {
       const card = document.createElement('article');
       card.className = 'showroom-card bg-stone rounded-sm overflow-hidden border border-stoneline';
+      const gallery = p.gallery ?? [];
+      const galleryLinks = gallery.map((photo, i) => {
+        if (i === 0) {
+          return `
+            <a href="${photo.src}" class="glightbox aspect-[4/3] bg-stoneline flex items-center justify-center text-groutsoft text-sm block" data-gallery="project-${p.id}" data-title="${p.title}" data-description="${photo.caption ?? ''}">
+              <img src="${photo.src}" alt="${p.title}${photo.caption ? ' — ' + photo.caption : ''}" class="w-full h-full object-cover" loading="lazy">
+            </a>`;
+        }
+        // additional photos in this project's gallery: not shown on the card itself,
+        // but registered under the same data-gallery id so GLightbox's next/prev
+        // cycles through all of them once the card's photo is opened.
+        return `<a href="${photo.src}" class="glightbox hidden" data-gallery="project-${p.id}" data-title="${p.title}" data-description="${photo.caption ?? ''}"></a>`;
+      }).join('');
+
       card.innerHTML = `
-        <div class="aspect-[4/3] bg-stoneline text-groutsoft text-sm">
-          <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover">
-        </div>
+        ${galleryLinks}
         <div class="p-4">
           <p class="text-xs uppercase tracking-wide text-glaze mb-1">${p.category}</p>
           <h3 class="font-display text-lg text-grout mb-1">${p.title}</h3>
@@ -353,6 +374,10 @@
         </div>`;
       grid.appendChild(card);
     });
+
+    if (showroomLightbox) {
+      showroomLightbox.reload();
+    }
   }
 
   document.getElementById('filterBar').addEventListener('click', (e) => {
@@ -363,6 +388,8 @@
     activeFilter = btn.dataset.filter;
     renderShowroom();
   });
+
+  showroomLightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
 
   fetch('backend/projects-niesstile.json')
     .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })

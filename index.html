@@ -368,14 +368,17 @@
       const galleryLinks = gallery.map((photo, i) => {
         if (i === 0) {
           return `
-            <a href="${photo.src}" class="glightbox aspect-[4/3] bg-stoneline flex items-center justify-center text-groutsoft text-sm block" data-gallery="project-${p.id}" data-title="${p.title}" data-description="${photo.caption ?? ''}">
+            <a href="${photo.src}" class="glightbox aspect-[4/3] bg-stoneline flex items-center justify-center text-groutsoft text-sm block" data-gallery="category-${p.category}" data-title="${p.title}" data-description="${photo.caption ?? ''}">
               <img src="${photo.src}" alt="${p.title}${photo.caption ? ' — ' + photo.caption : ''}" class="w-full h-full object-cover" loading="lazy">
             </a>`;
         }
         // additional photos in this project's gallery: not shown on the card itself,
         // but registered under the same data-gallery id so GLightbox's next/prev
-        // cycles through all of them once the card's photo is opened.
-        return `<a href="${photo.src}" class="glightbox hidden" data-gallery="project-${p.id}" data-title="${p.title}" data-description="${photo.caption ?? ''}"></a>`;
+        // cycles through them too. Grouped by category (not project id) so that
+        // opening any photo in, say, "Bath" scrolls through every Bath project's
+        // photos continuously — this is a deliberate choice Jeff liked when he saw
+        // it happen by accident with the old duplicate-id data.
+        return `<a href="${photo.src}" class="glightbox hidden" data-gallery="category-${p.category}" data-title="${p.title}" data-description="${photo.caption ?? ''}"></a>`;
       }).join('');
 
       card.innerHTML = `

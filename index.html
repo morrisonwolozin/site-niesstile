@@ -75,10 +75,10 @@
     <!-- <a href="#hero" src="./logo.png" class="font-display text-2xl tracking-tight text-grout"><img src="./assets/img/logo-navbar.webp" alt="Niess Tile" class="h-12 w-auto"></a> -->
 
     <a href="#hero" class="flex items-center">
-      <img src="assets/img/niesstile-wordmark.png" alt="Niess Tile" class="h-14 w-auto">
+      <img src="assets/img/niesstile-wordmark.png" alt="Niess Tile" class="h-16 w-auto">
     </a>
 
-    <nav class="hidden md:flex items-center gap-8 text-sm text-groutsoft">
+    <nav class="hidden md:flex items-center gap-8 text-lg text-groutsoft">
       <a href="#about" class="hover:text-grout">About</a>
       <a href="#showroom" class="hover:text-grout">Show Room</a>
       <a href="#testimonials" class="hover:text-grout">Testimonials</a>
@@ -137,7 +137,7 @@
     </div>
     <dl class="grid grid-cols-2 gap-8 content-start">
       <div>
-        <dt class="font-display text-3xl text-glaze">[15]</dt>
+        <dt class="font-display text-3xl text-glaze">15</dt>
         <dd class="text-sm text-groutsoft mt-1">Years setting tile</dd>
       </div>
       <div>
@@ -328,10 +328,12 @@
   // instead of a static file, with no change needed to the rendering code below.
   // Sort/limit by "priority" (higher = shown first / included first) so the future
   // admin UI can reorder the gallery or trim how many cards show just by editing that field.
+  // "visible" (boolean) controls whether a project shows at all — omit it or set true
+  // to show, false to pull it from the Show Room without deleting the entry.
   const FALLBACK_PROJECTS = [
-    { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/kitchen-backsplash-camden-00.webp', caption: 'finished' }] },
-    { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/bath-shower-belfast-00.webp', caption: 'finished' }] },
-    { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/floor-entry-rockport-00.webp', caption: 'finished' }] }
+    { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/kitchen-backsplash-camden-00.webp', caption: 'finished' }] },
+    { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/bath-shower-belfast-00.webp', caption: 'finished' }] },
+    { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/floor-entry-rockport-00.webp', caption: 'finished' }] }
   ];
 
   let allProjects = [];
@@ -342,7 +344,7 @@
     const grid = document.getElementById('showroomGrid');
     const empty = document.getElementById('showroomEmpty');
     const visible = allProjects
-      .filter(p => activeFilter === 'all' || p.category === activeFilter)
+      .filter(p => (p.visible ?? true) && (activeFilter === 'all' || p.category === activeFilter))
       .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
 
     grid.innerHTML = '';

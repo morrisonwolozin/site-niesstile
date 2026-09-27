@@ -1,261 +1,358 @@
 [
   {
-    "id": "kitchen-backsplash",
+    "id": "backsplash-brewer-me",
     "title": "Backsplash — Brewer, ME",
     "category": "kitchen",
     "priority": 9,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-01-00.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/backsplash-01-00.webp",
+        "caption": ""
+      }
     ]
   },
-    {
-    "id": "kitchen-backsplash",
+  {
+    "id": "backsplash-bangor-me",
     "title": "Backsplash — Bangor, ME",
     "category": "kitchen",
     "priority": 9,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-02-01.webp", "caption": "" },
-      { "src": "assets/img/showroom/backsplash-02-02.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/backsplash-02-01.webp",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/showroom/backsplash-02-02.webp",
+        "caption": ""
+      }
     ]
   },
-   
-    {
-    "id": "kitchen-backsplash",
+  {
+    "id": "backsplash-hampden-me",
     "title": "Backsplash — Hampden, ME",
     "category": "kitchen",
     "priority": 9,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-03-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/backsplash-03-01.webp",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/showroom/backsplash-03-02.webp",
+        "caption": ""
+      }
     ]
   },
-{
-    "id": "kitchen-backsplash",
+  {
+    "id": "backsplash-bangor-me-2",
     "title": "Backsplash — Bangor, ME",
     "category": "kitchen",
     "priority": 9,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-04-01.webp", "caption": "" }
-
+      {
+        "src": "assets/img/showroom/backsplash-04-01.webp",
+        "caption": ""
+      }
     ]
   },
-{
-    "id": "kitchen-backsplash",
+  {
+    "id": "backsplash-dixmont-me",
     "title": "Backsplash — Dixmont, ME",
     "category": "kitchen",
-    "priority": 9,
+    "priority": 12,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/backsplash-05-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/backsplash-05-01.webp",
+        "caption": ""
+      }
     ]
   },
-
   {
-    "id": "floor",
+    "id": "kitchen-floor-rockport-me",
     "title": "Kitchen Floor Rockport, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-01-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-01-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "floor",
+    "id": "entryway-rockport-me",
     "title": "Entryway — Rockport, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-02-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-02-01.webp",
+        "caption": ""
+      }
     ]
   },
-
   {
-    "id": "floor",
+    "id": "bathroom-camden-me",
     "title": "Bathroom — Camden, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-03-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-03-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "floor",
+    "id": "bathroom-rockport-me",
     "title": "Bathroom — Rockport, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-04-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-04-01.webp",
+        "caption": ""
+      }
     ]
   },
-
   {
-    "id": "floor",
+    "id": "hearth-bangor-me",
     "title": "Hearth — Bangor, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-05-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-05-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "floor",
+    "id": "raised-hearth-corinna-me",
     "title": "Raised Hearth — Corinna, ME",
     "category": "floors",
     "priority": 8,
-    "description": "Placeholder entry. Replace with real project photos and captions once available.",
+    "visible": true,
+    "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/floors-06-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/floors-06-01.webp",
+        "caption": ""
+      }
     ]
   },
-
-
-  
-
   {
-    "id": "bath",
+    "id": "bath-floor-and-shower-brewer-me",
     "title": "Bath Floor and Shower — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-01-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-01-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "bath",
+    "id": "bath-vanity-and-shower-old-town-me",
     "title": "Bath Vanity and Shower — Old Town, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-02-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-02-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "bath",
+    "id": "shower-brewer-me",
     "title": "Shower — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-03-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-03-01.webp",
+        "caption": ""
+      }
     ]
   },
- {
-    "id": "bath",
+  {
+    "id": "bath-shower-surround-brewer-me",
     "title": "Bath Shower Surround — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-04-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-04-01.webp",
+        "caption": ""
+      }
     ]
   },
- {
-    "id": "bath",
+  {
+    "id": "shower-with-seat-brewer-me",
     "title": "Shower with Seat — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-05-01.webp", "caption": "" },
-      { "src": "assets/img/showroom/bath-05-02.webp", "caption": "" } 
+      {
+        "src": "assets/img/showroom/bath-05-01.webp",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/showroom/bath-05-02.webp",
+        "caption": ""
+      }
     ]
   },
- {
-    "id": "bath",
+  {
+    "id": "shower-brewer-me-2",
     "title": "Shower — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-07-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-07-01.webp",
+        "caption": ""
+      }
     ]
   },
- {
-    "id": "bath",
+  {
+    "id": "bath-floor-brewer-me",
     "title": "Bath Floor — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-08-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-08-01.webp",
+        "caption": ""
+      }
     ]
   },
-   {
-    "id": "bath",
+  {
+    "id": "floor-and-shower-belfast-me",
     "title": "Floor and Shower — Belfast, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/bath-09-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/bath-09-01.webp",
+        "caption": ""
+      }
     ]
   },
-
-
-
   {
-    "id": "shower",
+    "id": "shower-bangor-me",
     "title": "Shower — Bangor, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/shower-01-01.webp", "caption": "" },
-      { "src": "assets/img/showroom/shower-01-02.webp", "caption": "" },
-      {"src": "assets/img/showroom/shower-01-03.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/shower-01-01.webp",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/showroom/shower-01-02.webp",
+        "caption": ""
+      },
+      {
+        "src": "assets/img/showroom/shower-01-03.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "shower",
+    "id": "shower-with-corner-seat-brewer-me",
     "title": "Shower with Corner Seat — Brewer, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/shower-04-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/shower-04-01.webp",
+        "caption": ""
+      }
     ]
   },
-  
   {
-    "id": "shower",
+    "id": "shower-bangor-me-2",
     "title": "Shower  — Bangor, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/shower-04-02.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/shower-04-02.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "shower",
+    "id": "shower-hampden-me",
     "title": "Shower — Hampden, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/shower-06-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/shower-06-01.webp",
+        "caption": ""
+      }
     ]
   },
   {
-    "id": "shower",
+    "id": "shower-orono-me",
     "title": "Shower — Orono, ME",
     "category": "bath",
     "priority": 6,
+    "visible": true,
     "description": "",
     "gallery": [
-      { "src": "assets/img/showroom/shower-08-01.webp", "caption": "" }
+      {
+        "src": "assets/img/showroom/shower-08-01.webp",
+        "caption": ""
+      }
     ]
   }
-
-
 ]

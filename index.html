@@ -55,6 +55,14 @@
     border-color: #262321;
   }
 
+    /* Native <option> popups render with a browser-default light background
+    regardless of the page's own dark styling, so force dark text here or
+    the inherited light "text-porcelain" color becomes unreadable. */
+  #projectType option {
+    color: #262321;
+    background-color: #F7F4EE;
+  }
+
   :focus-visible {
     outline: 2px solid #2F6363;
     outline-offset: 2px;

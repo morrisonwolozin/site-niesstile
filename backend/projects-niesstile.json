@@ -1,7 +1,7 @@
 [
   {
     "id": "backsplash-brewer-me",
-    "title": "Backsplash — Brewer, ME",
+    "title": "Backsplash — Monroe, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -9,13 +9,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/backsplash-01-00.webp",
-        "caption": ""
+        "caption": "Subway and herringbone mosaic tile"
       }
     ]
   },
   {
     "id": "backsplash-bangor-me",
-    "title": "Backsplash — Bangor, ME",
+    "title": "Backsplash — Newport, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -23,17 +23,17 @@
     "gallery": [
       {
         "src": "assets/img/showroom/backsplash-02-01.webp",
-        "caption": ""
+        "caption": "Glass mosaic tile"
       },
       {
         "src": "assets/img/showroom/backsplash-02-02.webp",
-        "caption": ""
+        "caption": "Glass mosaic tile"
       }
     ]
   },
   {
     "id": "backsplash-hampden-me",
-    "title": "Backsplash — Hampden, ME",
+    "title": "Backsplash — Atkinson, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -41,17 +41,17 @@
     "gallery": [
       {
         "src": "assets/img/showroom/backsplash-03-01.webp",
-        "caption": ""
+        "caption": "Travertine subway tile"
       },
       {
         "src": "assets/img/showroom/backsplash-03-02.webp",
-        "caption": ""
+        "caption": "Travertine subway tile"
       }
     ]
   },
   {
     "id": "backsplash-bangor-me-2",
-    "title": "Backsplash — Bangor, ME",
+    "title": "Backsplash — Frankfort, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -59,13 +59,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/backsplash-04-01.webp",
-        "caption": ""
+        "caption": "Glass Mosaic tile"
       }
     ]
   },
   {
     "id": "backsplash-dixmont-me",
-    "title": "Backsplash — Dixmont, ME",
+    "title": "Backsplash — Bangor, ME",
     "category": "kitchen",
     "priority": 12,
     "visible": true,
@@ -73,13 +73,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/backsplash-05-01.webp",
-        "caption": ""
+        "caption": "Glass and metal mosaic tile"
       }
     ]
   },
   {
     "id": "kitchen-floor-rockport-me",
-    "title": "Kitchen Floor Rockport, ME",
+    "title": "Kitchen Floor - Troy, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -87,13 +87,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-01-01.webp",
-        "caption": ""
+        "caption": "Wood look plank tile floor and base trim"
       }
     ]
   },
   {
     "id": "entryway-rockport-me",
-    "title": "Entryway — Rockport, ME",
+    "title": "Entryway — Troy, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -101,13 +101,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-02-01.webp",
-        "caption": ""
+        "caption": "Wood look plank tile floor and base trim"
       }
     ]
   },
   {
     "id": "bathroom-camden-me",
-    "title": "Bathroom — Camden, ME",
+    "title": "Bathroom — Bangor, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -115,13 +115,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-03-01.webp",
-        "caption": ""
+        "caption": "Stone look large format tile"
       }
     ]
   },
   {
     "id": "bathroom-rockport-me",
-    "title": "Bathroom — Rockport, ME",
+    "title": "Bathroom — Hermon, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -129,13 +129,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-04-01.webp",
-        "caption": ""
+        "caption": "Wood look plank tile"
       }
     ]
   },
   {
     "id": "hearth-bangor-me",
-    "title": "Hearth — Bangor, ME",
+    "title": "Hearth — Atkinson, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -143,13 +143,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-05-01.webp",
-        "caption": ""
+        "caption": "Travertine subway hearth tile"
       }
     ]
   },
   {
     "id": "raised-hearth-corinna-me",
-    "title": "Raised Hearth — Corinna, ME",
+    "title": "Raised Hearth — Dixmont, ME",
     "category": "floors",
     "priority": 8,
     "visible": true,
@@ -157,13 +157,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/floors-06-01.webp",
-        "caption": ""
+        "caption": "Slate look large format with cultured stone hearth"
       }
     ]
   },
   {
     "id": "bath-floor-and-shower-brewer-me",
-    "title": "Bath Floor and Shower — Brewer, ME",
+    "title": "Bath Floor and Shower — Dixmont, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -171,13 +171,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-01-01.webp",
-        "caption": ""
+        "caption": "Stone look large format floor and subway tile tub surround"
       }
     ]
   },
   {
     "id": "bath-vanity-and-shower-old-town-me",
-    "title": "Bath Vanity and Shower — Old Town, ME",
+    "title": "Bath Vanity and Shower — Belfast, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -185,13 +185,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-02-01.webp",
-        "caption": ""
+        "caption": "Carrara look large format tub deck and shower"
       }
     ]
   },
   {
     "id": "shower-brewer-me",
-    "title": "Shower — Brewer, ME",
+    "title": "Shower — Troy, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -199,13 +199,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-03-01.webp",
-        "caption": ""
+        "caption": "Wood look plank tile shower with hexagon floor and recessed shelf"
       }
     ]
   },
   {
     "id": "bath-shower-surround-brewer-me",
-    "title": "Bath Shower Surround — Brewer, ME",
+    "title": "Bath Shower Surround — Hermon, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -213,13 +213,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-04-01.webp",
-        "caption": ""
+        "caption": "Hexagon mosaic shower surround"
       }
     ]
   },
   {
     "id": "shower-with-seat-brewer-me",
-    "title": "Shower with Seat — Brewer, ME",
+    "title": "Shower with Seat — Hermon, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -227,17 +227,17 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-05-01.webp",
-        "caption": ""
+        "caption": "Gloss large format shower tile with hexagon floor and recessed shelf"
       },
       {
         "src": "assets/img/showroom/bath-05-02.webp",
-        "caption": ""
+        "caption": "Gloss large format shower tile with hexagon floor and recessed shelf"
       }
     ]
   },
   {
     "id": "shower-brewer-me-2",
-    "title": "Shower — Brewer, ME",
+    "title": "Shower — Hermon, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -245,13 +245,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-07-01.webp",
-        "caption": ""
+        "caption": "Pebble tub surround with corner shelves"
       }
     ]
   },
   {
     "id": "bath-floor-brewer-me",
-    "title": "Bath Floor — Brewer, ME",
+    "title": "Bath Floor — Belfast, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -259,13 +259,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-08-01.webp",
-        "caption": ""
+        "caption": "Hexagon floor tile"
       }
     ]
   },
   {
     "id": "floor-and-shower-belfast-me",
-    "title": "Floor and Shower — Belfast, ME",
+    "title": "Floor and Shower — Troy, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -273,13 +273,13 @@
     "gallery": [
       {
         "src": "assets/img/showroom/bath-09-01.webp",
-        "caption": ""
+        "caption": "Wood look plank tile floor and shower with hexagon floor"
       }
     ]
   },
   {
     "id": "shower-bangor-me",
-    "title": "Shower — Bangor, ME",
+    "title": "Shower — Monroe, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -287,21 +287,21 @@
     "gallery": [
       {
         "src": "assets/img/showroom/shower-01-01.webp",
-        "caption": ""
+        "caption": "Subway tile shower with recessed shelf and window"
       },
       {
         "src": "assets/img/showroom/shower-01-02.webp",
-        "caption": ""
+        "caption": "Subway tile shower with recessed shelf and window"
       },
       {
         "src": "assets/img/showroom/shower-01-03.webp",
-        "caption": ""
+        "caption": "Subway tile shower with recessed shelf and window"
       }
     ]
   },
   {
     "id": "shower-with-corner-seat-brewer-me",
-    "title": "Shower with Corner Seat — Brewer, ME",
+    "title": "Shower with Corner Seat — Orrington, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -309,27 +309,17 @@
     "gallery": [
       {
         "src": "assets/img/showroom/shower-04-01.webp",
-        "caption": ""
-      }
-    ]
-  },
-  {
-    "id": "shower-bangor-me-2",
-    "title": "Shower  — Bangor, ME",
-    "category": "bath",
-    "priority": 6,
-    "visible": true,
-    "description": "",
-    "gallery": [
+        "caption": "Carrara look large format tile with 2 recessed shelves, corner bench, pebble floor and stacked stone accent"
+      },
       {
         "src": "assets/img/showroom/shower-04-02.webp",
-        "caption": ""
+        "caption": "Carrara look large format tile with 2 recessed shelves, corner bench, pebble floor and stacked stone accent"
       }
     ]
   },
   {
     "id": "shower-hampden-me",
-    "title": "Shower — Hampden, ME",
+    "title": "Shower — Orrington, ME",
     "category": "bath",
     "priority": 6,
     "visible": true,
@@ -337,7 +327,7 @@
     "gallery": [
       {
         "src": "assets/img/showroom/shower-06-01.webp",
-        "caption": ""
+        "caption": "Gloss large format tile with recessed shelf, pebble floor, and foot rest"
       }
     ]
   },
@@ -351,7 +341,7 @@
     "gallery": [
       {
         "src": "assets/img/showroom/shower-08-01.webp",
-        "caption": ""
+        "caption": "Large format tile with 2 tier recessed shelf and mosaic floor"
       }
     ]
   }

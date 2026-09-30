@@ -1,7 +1,7 @@
 [
   {
     "id": "backsplash-brewer-me",
-    "title": "Backsplash — Monroe, ME",
+    "title": "Backsplash — Bangor, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -15,7 +15,7 @@
   },
   {
     "id": "backsplash-bangor-me",
-    "title": "Backsplash — Newport, ME",
+    "title": "Backsplash — Monroe, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -33,7 +33,7 @@
   },
   {
     "id": "backsplash-hampden-me",
-    "title": "Backsplash — Atkinson, ME",
+    "title": "Backsplash — Newport, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -51,7 +51,7 @@
   },
   {
     "id": "backsplash-bangor-me-2",
-    "title": "Backsplash — Frankfort, ME",
+    "title": "Backsplash — Atkinson, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,
@@ -65,7 +65,7 @@
   },
   {
     "id": "backsplash-dixmont-me",
-    "title": "Backsplash — Bangor, ME",
+    "title": "Backsplash — Frankfort, ME",
     "category": "kitchen",
     "priority": 9,
     "visible": true,

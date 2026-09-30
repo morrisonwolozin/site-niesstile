@@ -67,7 +67,7 @@
     "id": "backsplash-dixmont-me",
     "title": "Backsplash — Bangor, ME",
     "category": "kitchen",
-    "priority": 12,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -81,7 +81,7 @@
     "id": "kitchen-floor-rockport-me",
     "title": "Kitchen Floor - Troy, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -95,7 +95,7 @@
     "id": "entryway-rockport-me",
     "title": "Entryway — Troy, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -109,7 +109,7 @@
     "id": "bathroom-camden-me",
     "title": "Bathroom — Bangor, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -123,7 +123,7 @@
     "id": "bathroom-rockport-me",
     "title": "Bathroom — Hermon, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -137,7 +137,7 @@
     "id": "hearth-bangor-me",
     "title": "Hearth — Atkinson, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -151,7 +151,7 @@
     "id": "raised-hearth-corinna-me",
     "title": "Raised Hearth — Dixmont, ME",
     "category": "floors",
-    "priority": 8,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -165,7 +165,7 @@
     "id": "bath-floor-and-shower-brewer-me",
     "title": "Bath Floor and Shower — Dixmont, ME",
     "category": "bath",
-    "priority": 6,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [
@@ -179,7 +179,7 @@
     "id": "bath-vanity-and-shower-old-town-me",
     "title": "Bath Vanity and Shower — Belfast, ME",
     "category": "bath",
-    "priority": 6,
+    "priority": 9,
     "visible": true,
     "description": "",
     "gallery": [

@@ -205,13 +205,13 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS ============ -->
+<!-- ============ TESTIMONIALS backhere ============ -->
 <section id="testimonials" class="py-24 px-6 bg-stone border-y border-stoneline">
   <div class="max-w-4xl mx-auto">
     <h2 class="font-display text-3xl text-grout mb-10">Client Words</h2>
-    <div class="grid md:grid-cols-2 gap-8">
+    <div id="testimonialsGrid" class="grid md:grid-cols-2 gap-8">
 
-      <blockquote class="bg-porcelain p-6 rounded-sm border border-stoneline">
+      <!-- <blockquote class="bg-porcelain p-6 rounded-sm border border-stoneline">
         <p class="text-groutsoft leading-relaxed">We hired Jeff to completely redo our master bathroom, and we are ecstatic with the results! Jeff was absolutely wonderful to work with and so helpful guiding us through the process. All the work was done with so much care and meticulous execution. The tile work is perfect and exactly what we requested. Every detail is amazing, and we’re so appreciative for his willingness to make sure it meets our expectations. We are already planning our next bathroom renovation and can’t wait to hire Jeff again! </p>
         <footer class="mt-4 text-sm text-grout">— John Poulin   Bangor, ME</footer>
       </blockquote>
@@ -239,7 +239,7 @@
       <blockquote class="bg-porcelain p-6 rounded-sm border border-stoneline">
         <p class="text-groutsoft leading-relaxed">Jeff is a professional - he's quick, efficient and a pleasure to work with.</p>
         <footer class="mt-4 text-sm text-grout">— Bob Morrison Palermo, ME</footer>
-      </blockquote>
+      </blockquote> -->
     </div>
 
   </div>
@@ -249,14 +249,15 @@
 <section id="faq" class="py-24 px-6">
   <div class="max-w-3xl mx-auto">
     <h2 class="font-display text-3xl text-grout mb-10">Common Questions</h2>
-    <div class="divide-y divide-stoneline border-t border-b border-stoneline">
+    <div id="faqList" class="divide-y divide-stoneline border-t border-b border-stoneline">
+<!-- populated by JS from backend/faqs-niesstile.json 
 
       <details class="py-5 group">
         <summary class="flex items-center justify-between text-grout">
           <span class="italic">What areas do you serve?</span>
           <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
         </summary>
-        <p class="mt-3 text-groutsoft">Central and Midcoast Maine. I typically serve within 1 hour of Dixmont but have travelled further if my schedule permits.</p>
+        <p class="mt-3 text-groutsoft">Central and Midcoast Maine. I typically work within 1 hour of Dixmont but have travelled further if my schedule permits.</p>
       </details>
 
       <details class="py-5 group">
@@ -305,7 +306,7 @@
           <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
         </summary>
         <p class="mt-3 text-groutsoft">Yes to both, but it depends on the integrity of the original installation and substrate if it would be worth repairing/regrouting.</p>
-      </details>
+      </details> -->
 
     </div>
   </div>
@@ -381,6 +382,8 @@
   &copy; <span id="footerYear"></span> Niess Tile. All rights reserved.
 </footer>
 
+<!-- ============ Scripts ============ -->
+
 <script>
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 </script>
@@ -410,6 +413,8 @@
     { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/bath-shower-belfast-00.webp', caption: 'finished' }] },
     { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/floor-entry-rockport-00.webp', caption: 'finished' }] }
   ];
+
+  <!-- ============ Scripts Showroom herehere ============ -->
 
   let allProjects = [];
   let activeFilter = 'all';
@@ -475,6 +480,69 @@
     .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
     .then(data => { allProjects = data; renderShowroom(); })
     .catch(() => { allProjects = FALLBACK_PROJECTS; renderShowroom(); });
+
+
+  <!-- ============ Scripts Testimonials ============ -->
+
+  const FALLBACK_TESTIMONIALS = [{ id: 'testimonials-0', body: 'Jeff is a professional - he\'s quick, efficient and a pleasure to work with.', name: 'Bob Morrison', location: 'Palermo, ME', priority: 10, visible: true }]
+
+  let allTestimonials = [];
+
+  function renderTestimonials() {
+    const grid = document.getElementById('testimonialsGrid');
+
+    const visible = allTestimonials
+      .filter(t => t.visible ?? true)
+      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
+
+    grid.innerHTML = '';
+
+    visible.forEach(t => {
+      const blockquote = document.createElement('blockquote');
+      blockquote.className = 'bg-porcelain p-6 rounded-sm border border-stoneline';
+      blockquote.innerHTML = `
+        <p class="text-groutsoft leading-relaxed">${t.body}</p>
+        <footer class="mt-4 text-sm text-grout">— ${t.name}${t.location ? '   ' + t.location : ''}</footer>`;
+      grid.appendChild(blockquote);
+    });
+  }
+
+  fetch('backend/testimonials-niesstile.json')
+    .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
+    .then(data => { allTestimonials = data; 
+      renderTestimonials(); })
+    .catch(() => { allTestimonials = FALLBACK_TESTIMONIALS; renderTestimonials(); });
+
+  <!-- ============ Scripts FAQ ============ -->
+
+ const FALLBACK_FAQ = [{ id: 'faq-0', question: 'What areas do you serve?', answer: 'Central and Midcoast Maine.' }]
+
+function renderFAQ(items) {
+  const list = document.getElementById('faqList');
+  list.innerHTML = items.map(item => {
+    const hasLink = item.linkURL && item.linkText;
+    const answerHTML = hasLink
+      ? `${item.answerBefore ?? ''}<a href="${item.linkURL}" target="_blank" rel="noopener noreferrer" class="text-glaze underline hover:text-glazedark">${item.linkText}</a>${item.answerAfter ?? ''}`
+      : (item.answer ?? '');
+
+    return `
+      <details class="py-5 group">
+        <summary class="flex items-center justify-between text-grout">
+          <span class="italic">${item.question}</span>
+          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+        </summary>
+        <p class="mt-3 text-groutsoft">${answerHTML}</p>
+      </details>`;
+  }).join('');
+}
+
+fetch('backend/faq-niesstile.json')
+  .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
+  .then(renderFAQ)
+  .catch(() => { renderFAQ(FALLBACK_FAQ); });
+
+
+
 
   // --- contact form ---
   // POSTs to the shared contact-form server (Express, port 3002, PM2).

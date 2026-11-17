@@ -1,0 +1,63 @@
+[
+  {
+    "id": "1",
+    "clientName": "John Poulin",
+    "clientLocation": "Bangor, ME",
+    "clientWords": "We hired Jeff to completely redo our master bathroom, and we are ecstatic with the results! Jeff was absolutely wonderful to work with and so helpful guiding us through the process. All the work was done with so much care and meticulous execution. The tile work is perfect and exactly what we requested. Every detail is amazing, and we’re so appreciative for his willingness to make sure it meets our expectations. We are already planning our next bathroom renovation and can’t wait to hire Jeff again!",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "2",
+    "clientName": "Chris Bouchard",
+    "clientLocation": "Troy, ME",
+    "clientWords": "Jeff is a great young man very talented and very passionate about his work. I recommend him for any job, he is on time, does not cut corners and is honest with a great attitude. I have him doing more work at my home and very trust worthy. My showers came out amazing. Thank you Jeff for being such a great friend and I'm sure we will have a wonderful home when you get done",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "3",
+    "clientName": "Sean Hoferica",
+    "clientLocation": "Bangor, ME",
+    "clientWords": "So my wife and I currently renovated the kitchen. When it came to the backsplash along the counters we could not picture a design that would fit the new kitchen. We spoke with Jeff and he quickly met to share his ideas and possible routes we could take with the backsplash. He shared ideas and my wife and I selected one. The outcome was magnificent. His work is clean and professional. My wife and I highly recommend his service!",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "4",
+    "clientName": "Lipscomb & Garnier",
+    "clientLocation": "Lincolnville, ME",
+    "clientWords": "We are delighted with the tiling that Jeff did with our kitchen backsplash and master bathroom floor. Jeff is the consummate professional and he pays great attention to detail. He made certain that we were pleased with the end result. We could not be happier with Jeff and his expert tiling craftsmanship.",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "5",
+    "clientName": "Tricia Draper",
+    "clientLocation": "Newport, ME",
+    "clientWords": "Jeff came the following day after I called to look at our project & we had a quote that evening. And, he completed our project the following week! His 5☆☆☆☆☆ ratings were why we called him & we weren't disappointed! His attention to detail is \"spot on\"!",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "6",
+    "clientName": "Bob Morrison",
+    "clientLocation": "Palermo, ME",
+    "clientWords": "Jeff is a real professional. He tiled an apartment entry area. He's quick, efficient and a pleasure to work with.",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "2026-09-09",
+    "updatedAt": "2026-10-14",
+    "testimonialDate": ""
+  }
+]

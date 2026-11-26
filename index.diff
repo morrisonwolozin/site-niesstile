@@ -1,0 +1,271 @@
+--- index.html.original
++++ index.html.new
+@@ -400,22 +400,49 @@
+   });
+   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+ 
+-  // --- Show Room: fetch project data, render cards, filter ---
+-  // Data lives in data/projects-niesstile.json today; once the per-site admin
+-  // backend is built, this fetch target becomes an API route (e.g. /api/niesstile/projects)
+-  // instead of a static file, with no change needed to the rendering code below.
+-  // Sort/limit by "priority" (higher = shown first / included first) so the future
+-  // admin UI can reorder the gallery or trim how many cards show just by editing that field.
+-  // "visible" (boolean) controls whether a project shows at all — omit it or set true
+-  // to show, false to pull it from the Show Room without deleting the entry.
++  // --- Show Room, Testimonials and FAQ: fetch the published JSON and render ---
++  // The files are written by the admin app (every save regenerates them), so they
++  // are served fresh: fetch uses cache:'no-cache' to revalidate on each page load.
++  // The files are already filtered to visible entries and sorted by priority;
++  // the filter/sort below is a harmless second check. "priority": higher = shown first.
++  //
++  // IMPORTANT: everything in those files is typed by people in the admin, so it is
++  // treated as plain text. Elements are built with createElement/textContent, never by
++  // pasting data into an HTML string. (A caption containing a quote mark or "<" would
++  // otherwise break the page, or run as script.)
++
++  function el(tag, className, text) {
++    const n = document.createElement(tag);
++    if (className) n.className = className;
++    if (text !== undefined && text !== null) n.textContent = text;
++    return n;
++  }
++
++  // GLightbox puts data-title / data-description into the lightbox as HTML,
++  // so those two values are escaped before they go into the attributes.
++  function escapeHtml(s) {
++    return String(s ?? '')
++      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
++      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
++  }
++
++  const SAFE_PHOTO_PATH = /^(?!.*\.\.)[A-Za-z0-9_\-./]+\.(?:webp|jpe?g|png|gif)$/i;
++  const SAFE_LINK = /^https?:\/\//i;
++  const byPriority = (a, b) => (b.priority ?? 0) - (a.priority ?? 0);
++
++  function loadList(url) {
++    return fetch(url, { cache: 'no-cache' })
++      .then(res => { if (!res.ok) throw new Error(url + ' returned ' + res.status); return res.json(); })
++      .then(data => { if (!Array.isArray(data)) throw new Error(url + ' is not a list'); return data; });
++  }
++
++  // ---------- Show Room ----------
+   const FALLBACK_PROJECTS = [
+     { id: 'sample-kitchen-backsplash', title: 'Herringbone Backsplash — Camden, ME', category: 'kitchen', priority: 10, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/kitchen-backsplash-camden-00.webp', caption: 'finished' }] },
+     { id: 'sample-bath-shower', title: 'Curbless Shower Surround — Belfast, ME', category: 'bath', priority: 9, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/bath-shower-belfast-00.webp', caption: 'finished' }] },
+     { id: 'sample-floor-entry', title: 'Slate Entryway — Rockport, ME', category: 'floors', priority: 8, visible: true, description: 'Placeholder entry.', gallery: [{ src: 'assets/img/showroom/floor-entry-rockport-00.webp', caption: 'finished' }] }
+   ];
+ 
+-  <!-- ============ Scripts Showroom herehere ============ -->
+-
+   let allProjects = [];
+   let activeFilter = 'all';
+   let showroomLightbox = null;
+@@ -423,40 +450,48 @@
+   function renderShowroom() {
+     const grid = document.getElementById('showroomGrid');
+     const empty = document.getElementById('showroomEmpty');
+-    const visible = allProjects
++    const shown = allProjects
+       .filter(p => (p.visible ?? true) && (activeFilter === 'all' || p.category === activeFilter))
+-      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
++      .sort(byPriority);
+ 
+-    grid.innerHTML = '';
+-    empty.classList.toggle('hidden', visible.length > 0);
++    grid.replaceChildren();
++    empty.classList.toggle('hidden', shown.length > 0);
+ 
+-    visible.forEach(p => {
+-      const card = document.createElement('article');
+-      card.className = 'showroom-card bg-stone rounded-sm overflow-hidden border border-stoneline';
+-      const gallery = p.gallery ?? [];
+-      const galleryLinks = gallery.map((photo, i) => {
++    shown.forEach(p => {
++      const card = el('article', 'showroom-card bg-stone rounded-sm overflow-hidden border border-stoneline');
++      const photos = (Array.isArray(p.gallery) ? p.gallery : [])
++        .filter(g => g && SAFE_PHOTO_PATH.test(String(g.src ?? '')));
++
++      photos.forEach((photo, i) => {
++        // The first photo is the card's picture. Additional photos are not shown on the
++        // card itself, but are registered under the same data-gallery id so GLightbox's
++        // next/prev cycles through them too. Grouped by category (not project id) so that
++        // opening any photo in, say, "Bath" scrolls through every Bath project's photos
++        // continuously — a deliberate choice Jeff liked.
++        const a = el('a', i === 0
++          ? 'glightbox aspect-[4/3] bg-stoneline flex items-center justify-center text-black text-base block'
++          : 'glightbox hidden');
++        a.href = photo.src;
++        a.setAttribute('data-gallery', 'category-' + p.category);
++        a.setAttribute('data-title', escapeHtml(p.title));
++        a.setAttribute('data-description', escapeHtml(photo.caption));
+         if (i === 0) {
+-          return `
+-            <a href="${photo.src}" class="glightbox aspect-[4/3] bg-stoneline flex items-center justify-center text-black text-base block" data-gallery="category-${p.category}" data-title="${p.title}" data-description="${photo.caption ?? ''}">
+-              <img src="${photo.src}" alt="${p.title}${photo.caption ? ' — ' + photo.caption : ''}" class="w-full h-full object-cover" loading="lazy">
+-            </a>`;
++          const img = el('img', 'w-full h-full object-cover');
++          img.src = photo.src;
++          img.alt = p.title + (photo.caption ? ' — ' + photo.caption : '');
++          img.loading = 'lazy';
++          a.appendChild(img);
+         }
+-        // additional photos in this project's gallery: not shown on the card itself,
+-        // but registered under the same data-gallery id so GLightbox's next/prev
+-        // cycles through them too. Grouped by category (not project id) so that
+-        // opening any photo in, say, "Bath" scrolls through every Bath project's
+-        // photos continuously — this is a deliberate choice Jeff liked when he saw
+-        // it happen by accident with the old duplicate-id data.
+-        return `<a href="${photo.src}" class="glightbox hidden" data-gallery="category-${p.category}" data-title="${p.title}" data-description="${photo.caption ?? ''}"></a>`;
+-      }).join('');
+-
+-      card.innerHTML = `
+-        ${galleryLinks}
+-        <div class="p-4">
+-          <p class="text-xs uppercase tracking-wide text-glaze mb-1">${p.category}</p>
+-          <h3 class="font-display text-lg text-grout mb-1">${p.title}</h3>
+-          <p class="text-base text-groutsoft">${p.description ?? ''}</p>
+-        </div>`;
++        card.appendChild(a);
++      });
++
++      const body = el('div', 'p-4');
++      body.append(
++        el('p', 'text-xs uppercase tracking-wide text-glaze mb-1', p.category),
++        el('h3', 'font-display text-lg text-grout mb-1', p.title),
++        el('p', 'text-base text-groutsoft', p.description ?? '')
++      );
++      card.appendChild(body);
+       grid.appendChild(card);
+     });
+ 
+@@ -476,70 +511,75 @@
+ 
+   showroomLightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+ 
+-  fetch('backend/projects-niesstile.json')
+-    .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
++  loadList('backend/projects-niesstile.json')
+     .then(data => { allProjects = data; renderShowroom(); })
+-    .catch(() => { allProjects = FALLBACK_PROJECTS; renderShowroom(); });
++    .catch(err => { console.error('Show Room data:', err); allProjects = FALLBACK_PROJECTS; renderShowroom(); });
+ 
++  // ---------- Testimonials ----------
++  // Field names come from the admin: clientWords, clientName, clientLocation.
++  const FALLBACK_TESTIMONIALS = [{ id: 'testimonials-0', clientWords: 'Jeff is a professional - he\'s quick, efficient and a pleasure to work with.', clientName: 'Bob Morrison', clientLocation: 'Palermo, ME', priority: 10, visible: true }];
+ 
+-  <!-- ============ Scripts Testimonials ============ -->
+-
+-  const FALLBACK_TESTIMONIALS = [{ id: 'testimonials-0', body: 'Jeff is a professional - he\'s quick, efficient and a pleasure to work with.', name: 'Bob Morrison', location: 'Palermo, ME', priority: 10, visible: true }]
+-
+-  let allTestimonials = [];
+-
+-  function renderTestimonials() {
++  function renderTestimonials(items) {
+     const grid = document.getElementById('testimonialsGrid');
+-
+-    const visible = allTestimonials
++    grid.replaceChildren();
++    items
+       .filter(t => t.visible ?? true)
+-      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0));
++      .sort(byPriority)
++      .forEach(t => {
++        const quote = el('blockquote', 'bg-porcelain p-6 rounded-sm border border-stoneline');
++        quote.append(
++          el('p', 'text-groutsoft leading-relaxed', t.clientWords),
++          el('footer', 'mt-4 text-sm text-grout', '— ' + t.clientName + (t.clientLocation ? ', ' + t.clientLocation : ''))
++        );
++        grid.appendChild(quote);
++      });
++  }
+ 
+-    grid.innerHTML = '';
++  loadList('backend/testimonials-niesstile.json')
++    .then(renderTestimonials)
++    .catch(err => { console.error('Testimonials data:', err); renderTestimonials(FALLBACK_TESTIMONIALS); });
++
++  // ---------- FAQ ----------
++  // A FAQ entry reads: answer + [link] + answerAfter. The link only appears when
++  // both linkText and a valid http(s) linkURL are present (the admin enforces this too).
++  const FALLBACK_FAQ = [{ id: 'faq-0', question: 'What areas do you serve?', answer: 'Central and Midcoast Maine.' }];
++
++  function renderFAQ(items) {
++    const list = document.getElementById('faqList');
++    list.replaceChildren();
++    items
++      .filter(f => f.visible ?? true)
++      .sort(byPriority)
++      .forEach(f => {
++        const details = el('details', 'py-5 group');
++        const summary = el('summary', 'flex items-center justify-between text-grout');
++        summary.append(
++          el('span', 'italic', f.question),
++          el('span', 'faq-plus text-glaze text-xl leading-none transition-transform', '+')
++        );
++
++        const p = el('p', 'mt-3 text-groutsoft', String(f.answer ?? '').trim());
++        const url = String(f.linkURL ?? '').trim();
++        const text = String(f.linkText ?? '').trim();
++        if (text && SAFE_LINK.test(url)) {
++          const a = el('a', 'text-glaze underline hover:text-glazedark', text);
++          a.href = url;
++          a.target = '_blank';
++          a.rel = 'noopener noreferrer';
++          p.append(' ', a);
++          const after = String(f.answerAfter ?? '').trim();
++          // a space before the text after the link, unless it starts with punctuation
++          if (after) p.append((/^[.,;:!?)]/.test(after) ? '' : ' ') + after);
++        }
+ 
+-    visible.forEach(t => {
+-      const blockquote = document.createElement('blockquote');
+-      blockquote.className = 'bg-porcelain p-6 rounded-sm border border-stoneline';
+-      blockquote.innerHTML = `
+-        <p class="text-groutsoft leading-relaxed">${t.body}</p>
+-        <footer class="mt-4 text-sm text-grout">— ${t.name}${t.location ? '   ' + t.location : ''}</footer>`;
+-      grid.appendChild(blockquote);
+-    });
++        details.append(summary, p);
++        list.appendChild(details);
++      });
+   }
+ 
+-  fetch('backend/testimonials-niesstile.json')
+-    .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
+-    .then(data => { allTestimonials = data; 
+-      renderTestimonials(); })
+-    .catch(() => { allTestimonials = FALLBACK_TESTIMONIALS; renderTestimonials(); });
+-
+-  <!-- ============ Scripts FAQ ============ -->
+-
+- const FALLBACK_FAQ = [{ id: 'faq-0', question: 'What areas do you serve?', answer: 'Central and Midcoast Maine.' }]
+-
+-function renderFAQ(items) {
+-  const list = document.getElementById('faqList');
+-  list.innerHTML = items.map(item => {
+-    const hasLink = item.linkURL && item.linkText;
+-    const answerHTML = hasLink
+-      ? `${item.answerBefore ?? ''}<a href="${item.linkURL}" target="_blank" rel="noopener noreferrer" class="text-glaze underline hover:text-glazedark">${item.linkText}</a>${item.answerAfter ?? ''}`
+-      : (item.answer ?? '');
+-
+-    return `
+-      <details class="py-5 group">
+-        <summary class="flex items-center justify-between text-grout">
+-          <span class="italic">${item.question}</span>
+-          <span class="faq-plus text-glaze text-xl leading-none transition-transform">+</span>
+-        </summary>
+-        <p class="mt-3 text-groutsoft">${answerHTML}</p>
+-      </details>`;
+-  }).join('');
+-}
+-
+-fetch('backend/faq-niesstile.json')
+-  .then(res => { if (!res.ok) throw new Error('not ok'); return res.json(); })
+-  .then(renderFAQ)
+-  .catch(() => { renderFAQ(FALLBACK_FAQ); });
++  loadList('backend/faq-niesstile.json')
++    .then(renderFAQ)
++    .catch(err => { console.error('FAQ data:', err); renderFAQ(FALLBACK_FAQ); });
+ 
+ 
+ 

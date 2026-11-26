@@ -1,8 +1,86 @@
 [
-{"id":"faq-0", "question": "What areas do you serve?", "answer": "Central and Midcoast Maine. I typically work within 1 hour of Dixmont but have travelled further if my schedule permits."},
-{"id":"faq-1","question": "Do you supply the tile, or do I?", "answer": "We'll do it either way, but the customer will select the tile.","answerBefore": "We'll do it either way, but the customer will select the tile. ", "answerAfter": ", Brewer, ME has a nice showroom with a good selection.","linkURL":"https://twincitytilemaine.com/","linkText":"Twin City Tile"},
-{"id":"faq-2","question": "How far in advance should I book?", "answer": "Two months is a typical lead time for most projects, but feel free to contact me about your project for the most up to date lead time."},
-{"id":"faq-3","question": "Do you work directly with homeowners, or only through contractors?", "answer": "Most often I work directly with homeowners to complete their projects. Niess Tile is also a trusted trade partner with Northridge Construction LLC and other general contractors in Central/Midcoast Maine."},
-{"id":"faq-4","question": "How can I get an estimate for my project?", "answer": "If you send me a few pictures, I can provide estimates remotely for smaller projects. When it comes to larger or more complex projects, I will make a site visit to go over the specifics of the project with the customer so I can provide an accurate estimate."},
-{"id":"faq-5","question": "Do you install heated tile floors?", "answer": "Yes, I do! It adds some extra time to the installation but it's well worth it."}
+  {
+    "id": "1",
+    "question": "What areas do you serve?",
+    "answer": "Central and Midcoast Maine. I typically serve within 1 hour of Dixmont but have travelled further if my schedule permits.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "2",
+    "question": "Do you supply the tile, or do I?",
+    "answer": "We'll do it either way, but the customer will select the tile. Twin City Tile",
+    "answerAfter": " in Brewer, ME has a nice showroom with many choices.",
+    "linkText": "Twin City Tile",
+    "linkURL": "https://twincitytilemaine.com/",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "3",
+    "question": "How far in advance should I book?",
+    "answer": "Central and Midcoast Maine. I typically serve within 1 hour of Dixmont but have travelled further if my schedule permits.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "4",
+    "question": "Do you work directly with homeowners, or only through contractors?",
+    "answer": "Most often I work directly with homeowners to complete their projects. Niess Tile is also a trusted trade partner with Northridge Construction LLC and other general contractors in Central/Midcoast Maine.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "5",
+    "question": "How can I get an estimate for my project?",
+    "answer": "If you send me a few pictures, I can provide estimates remotely for smaller projects. When it comes to larger or more complex projects, I will make a site visit to go over the specifics of the project with the customer so I can provide an accurate estimate.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "6",
+    "question": "Do you take on repair work and regrout existing tile?",
+    "answer": "Yes to both, but it depends on the integrity of the original installation and substrate if it would be worth repairing/regrouting.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  },
+  {
+    "id": "7",
+    "question": "Do you install heated tile floors?",
+    "answer": "Yes I do! It adds some extra time to the installation but it's well worth it.",
+    "answerAfter": "",
+    "linkText": "",
+    "linkURL": "",
+    "priority": 1,
+    "visible": true,
+    "createdAt": "",
+    "updatedAt": "2026-09-09"
+  }
 ]
